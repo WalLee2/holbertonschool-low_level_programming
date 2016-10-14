@@ -10,6 +10,7 @@ int main(void)
 
 	for ( i = 0; i < 10; i++)
 	{
+		b = '0';
 		for (i = 0; i < 10; i++)
 		{
 			putchar(a);
@@ -19,9 +20,9 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+			b++;
 		}
-		b++;
-		a++;
+
 	}
 	putchar('\n');
 	return(0);

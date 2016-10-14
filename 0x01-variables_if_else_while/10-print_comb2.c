@@ -6,21 +6,21 @@
 
 int main(void)
 {
-	int i, a = '0', b = '0';
+	int i, j;
 
 	for ( i = 0; i < 10; i++)
 	{
-		b = '0';
-		for (i = 0; i < 10; i++)
+		for (j = 0; j < 10; j++)
 		{
-			putchar(a);
-			putchar(b);
-			if (i != 9)
+			putchar(i + '0');
+			putchar(j + '0');
+			if (i == 9 && j == 9)
 			{
-				putchar(',');
-				putchar(' ');
+				break;
 			}
-			b++;
+			putchar(',');
+			putchar(' ');
+
 		}
 
 	}

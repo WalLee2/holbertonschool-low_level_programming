@@ -1,7 +1,13 @@
 #include "holberton.h"
 /**
+ *print_sign - function that prints the sign of each number given the
+ *correct condition.
+ *
+ *@n: The n parameter keeps track of the number and sends it to
+ * the correct condition.
+ *
  *main - printing the sign of a number.
- *Description: conditionals for each scenario
+ *
  *Return: 1 and prints + if n is greater than zero,
  *        0 and prints 0 if n is zero
  *       -1 and prints - if n is less than zero

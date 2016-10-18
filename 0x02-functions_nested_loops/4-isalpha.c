@@ -1,7 +1,10 @@
 #include "holberton.h"
 /**
- *main - writing a function that checks for lowercase or uppercase letter.
- *Description: Checking for lowercase or uppercase letters
+ *_isalpha - function that checks for alphabetic characters
+ *
+ *@c: evaluating c and inserting it through the conditional
+ *
+ *main - checks for lowercase or uppercase letters.
  *Return: 1 if c is a uppercase or lowercase
  */
 

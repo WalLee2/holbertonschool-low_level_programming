@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  *jack_bauer - outputting the time from 00:00 to 23:59
- *
+ *Description: printing out all minutes of the time till 23:59
  *Return: no value is returned
  *
  */

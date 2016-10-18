@@ -13,6 +13,18 @@
 int print_last_digit(int r)
 
 {
-	_putchar(r % 10);
-	return (r);
+	int remainder = r % 10;
+
+	if (r < 0)
+	{
+		r = r * -1;
+
+		_putchar(r % 10 + '0');
+		return (r % 10);
+	}
+	else
+	{
+		_putchar(remainder + '0');
+		return (r % 10);
+	}
 }

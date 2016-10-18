@@ -2,7 +2,8 @@
 /**
  *_islower - checks for lowercase characters.
  *
- *@c: evaluates the acii value of the letter and gets it through the conditional
+ *@c: evaluates the acii value of the
+ *letter and gets it through the conditional
  *
  *main - writing a function that checks for lowercase characters.
  *

@@ -12,6 +12,7 @@ int main(void)
 {
 	long int f, s, e, t;
 
+	e = 0;
 	f = 0;
 	s = 1;
 	while (t < 4000000)

@@ -10,3 +10,5 @@ void jack_bauer(void);
 void skeleton(int n);
 void times_table(void);
 int add(int, int);
+void print_to_98(int n);
+void number(int n);

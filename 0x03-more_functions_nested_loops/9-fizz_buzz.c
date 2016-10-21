@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+ *main - FizzBuzz test.
+ *Return: There is no return value.
+ *
+ */
 
 int main(void)
 
@@ -34,5 +38,6 @@ int main(void)
 		}
 	}
 	printf("\n");
+	return (0);
 
 }

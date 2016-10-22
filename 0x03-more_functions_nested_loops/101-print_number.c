@@ -34,7 +34,7 @@ void print_number(int n)
 		n *= -1;
 		_putchar(45);
 	}
-	while (n / power(c) >= 10 )
+	while (n / power(c) >= 10)
 	{
 		c++;
 	}

@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
+ *puts2 - printing out even numbers.
+ *@str: Variable that holds the string.
  *
  */
 

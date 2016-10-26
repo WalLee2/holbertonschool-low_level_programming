@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *_strcpy - Function that copes the string pointed to by src, including the terminating
- *null byte, to the buffer pointed to by dest
+ *_strcpy - Function that copes the string pointed to by src, including the
+ *terminating null byte, to the buffer pointed to by dest
  *
  *@src: variable that holds the string.
  *

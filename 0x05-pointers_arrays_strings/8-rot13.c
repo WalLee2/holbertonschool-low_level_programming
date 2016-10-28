@@ -21,7 +21,7 @@ char *rot13(char *o)
 				o[i] += 13;
 				i++;
 			}
-			while ((o[i] >= 'n' && o[i] <= 'm') ||
+			while ((o[i] >= 'n' && o[i] <= 'z') ||
 			       (o[i] >= 'M' && o[i] <= 'Z'))
 			{
 				o[i] -= 13;

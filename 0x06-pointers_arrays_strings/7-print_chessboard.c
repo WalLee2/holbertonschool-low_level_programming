@@ -1,9 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ *print_chessboard - A function that prints a chessboard.
+ *@a: variable array for chessboard.
  */
 void print_chessboard(char (*a)[8])
 {
@@ -21,5 +19,4 @@ void print_chessboard(char (*a)[8])
 		i++;
 		_putchar('\n');
 	}
-	_putchar('\n');
 }

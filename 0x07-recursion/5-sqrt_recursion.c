@@ -14,6 +14,7 @@ int _sqrt_recursion(int n)
  *helper_sqrt - A function that checks if a number is a natural square root.
  *@n: The input from main function.
  *@i: The number multiplied by itself.
+ *Return: Finding the square of the number.
  */
 int helper_sqrt(int n, int i)
 {

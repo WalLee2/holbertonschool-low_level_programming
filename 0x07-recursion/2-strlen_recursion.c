@@ -2,6 +2,7 @@
 /**
  *_strlen_recursion - Function that returns the length of a string
  *@s: A pointer variable that points to variable that stores a string
+ *Return: The length of the string.
  */
 int _strlen_recursion(char *s)
 {

@@ -2,6 +2,8 @@
 /**
  *factorial - returns the factorial of a given number
  *@n: the variable that holds the number.
+ *Return: The return value is the funciton call
+ *unless the base case is reached
  */
 int factorial(int n)
 {

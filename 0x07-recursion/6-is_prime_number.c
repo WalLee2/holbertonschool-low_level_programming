@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ *is_prime_number - a function that checks to see if n is a positive number
+ *and calls the helper function
+ *@n: The number being compared
+ *Return: helper function or 0 if n is less than 0
  */
 int is_prime_number(int n)
 {
@@ -17,6 +17,12 @@ int is_prime_number(int n)
 	}
 	return (0);
 }
+/**
+ *helper_f - A function that checks if n is a prime number.
+ *@n: Takes the income number and compares it
+ *@i: The integer that we are iterating through
+ *Return: The recursive function
+ */
 int helper_f(int n, int i)
 {
 	if (n % i == 0 && i != (n / 2))

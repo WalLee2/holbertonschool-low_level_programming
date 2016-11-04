@@ -1,0 +1,1 @@
+Using ar to make static libraries and ranlib to update the index.

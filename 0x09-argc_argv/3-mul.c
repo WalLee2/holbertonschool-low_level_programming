@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  *main - Multiplies two numbers
  *@argc: A variable that counts the number of arguments it takes in
@@ -7,12 +8,11 @@
  */
 int main(int argc, char *argv[])
 {
-	int result;
+	(void)argc;
 
 	if (argv[1] && argv[2])
 	{
-		result = (atoi(argv[1]) * atoi(argv[2]));
-		printf("%d\n", result);
+		printf("%d\n", ((atoi(argv[1]) * atoi(argv[2]))));
 		return (0);
 	}
 	else

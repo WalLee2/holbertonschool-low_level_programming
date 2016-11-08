@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- *string_concat - A function that concatenates two strings
+ *str_concat - A function that concatenates two strings
  *@s1: A pointer that points to one string.
  *@s2: A pointer that points to a different string.
  *Return: Pointer points to a newly allocated space in memory
@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		a++;
 	}
-	p = malloc( (i * sizeof(char)) + (a * sizeof(char)) );
+	p = malloc((i * sizeof(char)) + (a * sizeof(char)));
 	if (p == NULL)
 	{
 		return (NULL);

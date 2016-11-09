@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 	}
 	if (temp)
 	{
-		return (t);
+		return (temp);
 	}
 	else
 	{

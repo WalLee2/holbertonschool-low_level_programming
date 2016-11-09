@@ -5,7 +5,7 @@
  *2 dimensional integer grid
  *@width: The width of the grid
  *@height: The height of the grid
- *Return Null if it fails
+ *Return: Null if it fails
  */
 int **alloc_grid(int width, int height)
 {

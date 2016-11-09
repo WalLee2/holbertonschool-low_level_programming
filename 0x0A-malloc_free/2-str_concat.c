@@ -32,8 +32,8 @@ char *str_concat(char *s1, char *s2)
 		p[i] = s2[a];
 		i++;
 	p[i] = '\0';
-	if (p != NULL)
-		return (p);
-	else
+	if (p == NULL)
 		return (NULL);
+	else
+		return (p);
 }

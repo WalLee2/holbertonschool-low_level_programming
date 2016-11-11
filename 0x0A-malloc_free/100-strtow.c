@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- *strlen - Gets the length of each individual word.
- *
- *
+ *countw - Gets the length of each individual word.
+ *@strlen: A variable that takes in a string
+ *Return: The length of the string
  */
 int countw(char *strlen)
 {
@@ -70,6 +70,7 @@ char **strtow(char *str)
 			i++;
 			j = 0;
 			w_len = 0;
+			str++;
 		}
 	}
 	w_array[w_count] = NULL;

@@ -53,24 +53,18 @@ char **strtow(char *str)
 			w_array[i] = malloc((w_len + 1) * sizeof(char));
 			if (w_array[i] == NULL)
 			{
-				for (i = i -1; i >= 0; i--)
-				{
+				for (i = i - 1; i >= 0; i--)
 					free(w_array[i]);
-				}
 				free(w_array);
 				return (NULL);
 			}
 			while (*sub_array != ' ' && *sub_array != '\0')
 			{
 				w_array[i][j] = *sub_array;
-				sub_array++;
-				j++;
+				sub_array++; j++;
 			}
 			w_array[i][j] = '\0';
-			i++;
-			j = 0;
-			w_len = 0;
-			str++;
+			i++; j = 0; w_len = 0; str++;
 		}
 	}
 	w_array[w_count] = NULL;

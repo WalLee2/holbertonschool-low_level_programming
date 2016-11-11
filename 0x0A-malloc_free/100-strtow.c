@@ -14,11 +14,14 @@ int countw(char *strlen)
 	{
 		if (*strlen == ' ')
 			strlen++;
-		while (*strlen != ' ' && *strlen != '\0')
+		else
 		{
-			strlen++;
+			while (*strlen != ' ' && *strlen != '\0')
+			{
+				strlen++;
+			}
+			i++;
 		}
-		i++;
 	}
 	return (i);
 }

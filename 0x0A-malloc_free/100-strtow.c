@@ -14,7 +14,7 @@ int countw(char *strlen)
 	{
 		if (*strlen == ' ')
 			strlen++;
-		else if (*strlen != ' ' && *strlen != '\0')
+		while (*strlen != ' ' && *strlen != '\0')
 		{
 			strlen++;
 		}

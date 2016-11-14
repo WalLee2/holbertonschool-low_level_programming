@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *
- *
- *
- *
+ *print_dog - a function that prints the age, name and owner of a dog
+ *@d: A pointer that points to the name, age and owner
  */
 void print_dog(struct dog *d)
 {
@@ -15,10 +13,7 @@ void print_dog(struct dog *d)
 			printf("(nil)\n");
 		else
 			printf("Name: %s\n", d->name);
-		if (d == NULL)
-			printf ("(nil)\n");
-		else
-			printf("Age: %f\n", d->age);
+		printf("Age: %f\n", d->age);
 		if (d == NULL)
 			printf("(nil)\n");
 		else

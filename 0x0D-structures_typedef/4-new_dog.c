@@ -1,38 +1,39 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
- *new_dog - accounts for the length of the input, allocates memory
- *to a new space, prints the input in the space
- *@name: pointer variable that points to a string
- *@age: float variable that takes in a number
- *@owner: pointer variable that points to a string
- *Return: input values given
+ *new_dog - creating a new dog
+ *@name: Name of the dog
+ *@age: a float value
+ *@owner: a pointer that points to a string
+ *Return: The name, age, and owner is returned
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, lenN, lenO;
 	dog_t *doggy;
+	int i;
+	char *temp;
 
-	for (i = 0; name[i] != '\0'; i++)
-		lenN++;
-	for (i = 0; owner[i] != '\0'; i++)
-		lenO++;
-	doggy = malloc(sizeof(struct dog));
+	doggy = malloc(sizeof(dog_t));
 	if (doggy == NULL)
 		return (NULL);
-	doggy->name = malloc(lenN * sizeof(char));
+	temp = name;
+	for (i = 0; *temp != '\0'; i++, temp++)
+		;
+	if (i == 0)
+		return (NULL);
+	doggy->name = malloc(sizeof(char) * (i + 1));
 	if (doggy->name == NULL)
 		return (NULL);
+	doggy->name = name;
 	doggy->age = age;
-	doggy->owner = malloc((lenO * sizeof(char));
+	temp = owner;
+	for (i = 0; *temp != '\0'; i++, temp++)
+		;
+	if (i == 0)
+		return (NULL);
+	doggy->owner = malloc(sizeof(char) * (i + 1));
 	if (doggy->owner == NULL)
 		return (NULL);
-	for (i = 0; name[i] != '\0'; i++)
-		doggy->name[i] = name[i];
-	doggy->name = name;
-	for (i = 0; owner[i] != '\0'; i++)
-		doggy->owner[i] = owner[i];
 	doggy->owner = owner;
 	return (doggy);
 }

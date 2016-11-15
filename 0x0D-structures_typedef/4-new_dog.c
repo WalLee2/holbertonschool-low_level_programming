@@ -1,10 +1,11 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
- *
- *
- *
- *
+ *new_dog - creating a new dog
+ *@name: Name of the dog
+ *@age: a float value
+ *@owner: a pointer that points to a string
+ *Return: The name, age, and owner is returned
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {

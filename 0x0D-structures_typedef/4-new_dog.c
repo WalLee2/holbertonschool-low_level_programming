@@ -21,14 +21,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	doggy = malloc(sizeof(struct dog));
 	if (doggy == NULL)
 		return (NULL);
-	doggy->name = malloc(sizeof(lenN + 1));
+	doggy->name = malloc(lenN * sizeof(char));
 	if (doggy->name == NULL)
 		return (NULL);
 	doggy->age = age;
-	doggy->owner = malloc(sizeof(lenO + 1));
+	doggy->owner = malloc((lenO * sizeof(char));
 	if (doggy->owner == NULL)
 		return (NULL);
+	for (i = 0; name[i] != '\0'; i++)
+		doggy->name[i] = name[i];
 	doggy->name = name;
+	for (i = 0; owner[i] != '\0'; i++)
+		doggy->owner[i] = owner[i];
 	doggy->owner = owner;
 	return (doggy);
 }

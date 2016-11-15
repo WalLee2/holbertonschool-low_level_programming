@@ -1,2 +1,0 @@
-#!/bin/bash
-gcc -Xassembler $CFILE -o \$CFILE.s

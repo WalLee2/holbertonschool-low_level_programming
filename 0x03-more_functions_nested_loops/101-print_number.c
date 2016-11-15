@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  *power - getting the power of the integer.
  *@i: the variable i will be decrementing

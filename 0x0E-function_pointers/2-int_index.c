@@ -6,6 +6,7 @@
  *@int_index: Returns the index of the first element for which cmp
  *function does not return 0
  *@array: a pointer that points to an array
+ *Return: if no element matches the array, -1 is returned
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {

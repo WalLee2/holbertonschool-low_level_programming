@@ -3,7 +3,6 @@
  *int_index - a function that searches for an integer
  *@size: Number of elements in the array
  *@cmp: a pointer to the function to be used to compare values
- *@int_index: Returns the index of the first element for which cmp
  *function does not return 0
  *@array: a pointer that points to an array
  *Return: if no element matches the array, -1 is returned

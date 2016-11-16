@@ -82,7 +82,7 @@ char **strtow(char *str)
 			str++;
 		else
 		{
-			sub_array = str;
+			sub_array = str
 			while (*str != " " && *str != '\0')
 				i++, wlen++;
 			array[i] = malloc((wlen + 1) * sizeof(char));

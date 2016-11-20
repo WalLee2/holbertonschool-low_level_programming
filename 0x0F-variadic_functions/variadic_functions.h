@@ -1,6 +1,11 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
+/**
+ * struct print_a - a struct
+ * @c: lmfao
+ * @f: shit face
+ */
 typedef struct print_a
 {
 	char *c;

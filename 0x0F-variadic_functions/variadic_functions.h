@@ -3,8 +3,8 @@
 #include <stdarg.h>
 /**
  * struct print_a - a struct
- * @c: lmfao
- * @f: shit face
+ * @c: Character pointer
+ * @f: Function pointer
  */
 typedef struct print_a
 {

@@ -11,3 +11,6 @@ A function that returns the number of elements in a linked list
 
 3-add_nodeint_end.c
 "A function that adds a new node containing a number at the end of a list."
+
+4-free_listint.c
+"A fuction that frees a list."

@@ -5,7 +5,7 @@
  *@head: a double pointer pointing to the address of the struct
  *@index: a variable that indicates where the node number n should be inserted
  *@n: A variable that contains the data to be stored in the new node
- *Return NULL if you can't add the new node at index,
+ *Return: NULL if you can't add the new node at index,
  *new node if the index exists
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
@@ -33,11 +33,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 		{
 			new_insert->next = friend->next;
 			friend->next = new_insert;
+			return (new_insert);
 		}
 		friend = friend->next;
 		i++;
 	}
 	if (friend == NULL && i < (index - 1))
+	{
+		free(new_insert);
 		return (NULL);
-	return (new_insert);
+	}
+	return (NULL);
 }

@@ -3,8 +3,7 @@
 /**
  *print_listint - a function that prints all the numbers of
  *an element.
- *@h: a pointer variable that takes in the value stored in what is
- *being passed to it
+ *@h: a pointer variable that points to the head
  *Return: The number of nodes
  */
 size_t print_listint(const listint_t *h)

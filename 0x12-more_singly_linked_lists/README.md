@@ -24,3 +24,6 @@ returns the head node's data (n)."
 
 7-get_nodeint.c
 "A function that grabs the nth node of a linked list and returns the address of the node or NULL if it does not exist."
+
+8-sum_listint.c
+"A function that returns the sum of all the data of a linked list."

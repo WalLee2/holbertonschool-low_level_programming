@@ -23,6 +23,14 @@ void free_listint2(listint_t **head);
 int pop_listint(listint_t **head);
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 int sum_listint(listint_t *head);
+/**
+ *insert_nodeint_at_index - A function that inserts a new node
+ *at a given valid position
+ *@head: a pointer that points to the address of the struct
+ *@index: a variable that indicates where the node number n should be inserted
+ *@n: a variable that contains the data to be stored in the new node
+ *Return: NULL if the node does not exist. The address of the new node exists
+ */
 listint_t *insert_nodeint_at_index(listint_t **head,
 unsigned int index, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);

@@ -27,3 +27,6 @@ returns the head node's data (n)."
 
 8-sum_listint.c
 "A function that returns the sum of all the data of a linked list."
+
+9-insert_nodeint.c
+"A function that inserts a new node at a valid position."

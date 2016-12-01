@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- *listint_t - A function that adds a new node at the beginning
+ *add_nodeint - A function that adds a new node at the beginning
  *of a listint_t
  *@head: a pointer to NULL that gets changed
  *@n: A number that's being passed

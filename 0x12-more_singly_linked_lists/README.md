@@ -30,3 +30,6 @@ returns the head node's data (n)."
 
 9-insert_nodeint.c
 "A function that inserts a new node at a valid position."
+
+10-delete_nodeint.c
+"A function that deletes the node at index of a linked list"

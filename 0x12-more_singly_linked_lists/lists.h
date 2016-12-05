@@ -1,6 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -14,6 +15,11 @@ typedef struct listint_s
 	int n;
 	struct listint_s *next;
 } listint_t;
+typedef struct compare
+{
+	const void *addr;
+	struct compare *next;
+}addr_list;
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -35,4 +41,7 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 unsigned int index, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
+void free_listaddr(addr_list *head);
+addr_list *add_nodeaddr(addr_list **head, const void *addr);
+size_t print_listint_safe(const listint_t *head);
 #endif

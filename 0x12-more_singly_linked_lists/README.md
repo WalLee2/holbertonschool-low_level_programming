@@ -33,3 +33,9 @@ returns the head node's data (n)."
 
 10-delete_nodeint.c
 "A function that deletes the node at index of a linked list"
+
+100-reverse_listint.c
+"A function that reverses a linked list"
+
+101-print_listint_safe.c
+"A function that prints a linked list with the value and the address"

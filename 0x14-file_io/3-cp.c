@@ -22,26 +22,24 @@ int main(int argc, char *argv[])
 	reading_from = read(fd_read, buf, 1204);
 	if (reading_from == -1)
 		dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	writing_to = write(fd_write, buf, reading_from);
-	if (writing_to == -1)
-		dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(99);
-	while (reading_from)
+	while (reading_from > 0)
 	{
+		writing_to = write(fd_write, buf, reading_from);
+		if (writing_to == -1)
+			dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(99);
 		reading_from = read(fd_read, buf, 1204);
 		if (reading_from == -1)
-			dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]), exit(98);
-		if (reading_from > 0)
 		{
-			writing_to = write(fd_write, buf, reading_from);
-			if (writing_to == -1)
-				dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(99);
+			dprintf(STD_ER, "Error: Can't read from file %s\n",
+				argv[1]);
+			exit(98);
 		}
 	}
 	close_check = close(fd_read);
 	if (close_check == -1)
-		dprintf(STD_ER, "Error: Can't close fd %d\n", close_check);
+		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_read);
 	close_check = close(fd_write);
 	if (close_check == -1)
-		dprintf(STD_ER, "Error: Can't close fd %d\n", close_check);
+		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_write);
 	return (0);
 }

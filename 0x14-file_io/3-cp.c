@@ -9,7 +9,8 @@
 int main(int argc, char *argv[])
 {
 	char buf[1204];
-	int fd_read, fd_write, reading_from, writing_to, close_check;
+	int fd_read, fd_write, close_check;
+	ssize_t reading_from, writing_to;
 
 	if (argc != 3)
 		dprintf(STD_ER, "Usage: cp file_from file_to\n"), exit(97);
@@ -25,8 +26,7 @@ int main(int argc, char *argv[])
 		reading_from = read(fd_read, buf, 1204);
 		if (reading_from == -1)
 		{
-			dprintf(STD_ER, "Error: Can't read from file %s\n",
-				argv[1]);
+			dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 		if (reading_from > 0)

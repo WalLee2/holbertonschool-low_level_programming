@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		if (reading_from > 0)
 		{
 			writing_to = write(fd_write, buf, reading_from);
-			if (writing_to == -1 || write_to != reading_from)
+			if (writing_to == -1 || writing_to != reading_from)
 				dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
 	}

@@ -13,7 +13,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	fd = open(filename, O_CREAT | O_WRONLY, 0600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 	{
 		close(fd);
@@ -21,7 +21,8 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (text_content != NULL)
 	{
-		i = strlen_h(text_content);
+		for (i = 0; text_content[i] != '\0'; i++)
+			;
 		writing = write(fd, text_content, i);
 		if (writing == -1)
 		{
@@ -31,14 +32,4 @@ int create_file(const char *filename, char *text_content)
 	}
 	close(fd);
 	return (1);
-}
-
-int strlen_h(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0' && str != NULL)
-		i++;
-	return (i);
 }

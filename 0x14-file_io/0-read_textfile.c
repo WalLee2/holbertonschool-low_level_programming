@@ -27,6 +27,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (std_out == -1)
 		return (0);
 	close(fd);
-	printf("%s\n", buf);
+	printf("%s", buf);
 	return (std_out);
 }

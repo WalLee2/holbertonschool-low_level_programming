@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char buf[1204];
+	char buf[BUFFSIZE];
 	int fd_read, fd_write, close_check;
 	ssize_t reading_from, writing_to;
 
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	reading_from = 1;
 	while (reading_from)
 	{
-		reading_from = read(fd_read, buf, 1204);
+		reading_from = read(fd_read, buf, BUFFSIZE);
 		if (reading_from == -1)
 		{
 			dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]);

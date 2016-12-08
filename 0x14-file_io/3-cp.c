@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
 	}
 	close_check = close(fd_read);
 	if (close_check == -1)
-		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_read);
+		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_read), exit(100);
 	close_check = close(fd_write);
 	if (close_check == -1)
-		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_write);
+		dprintf(STD_ER, "Error: Can't close fd %d\n", fd_write), exit(100);
 	return (0);
 }

@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	fd_write = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_write == -1)
-		dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(98);
+		dprintf(STD_ER, "Error: Can't write to %s\n", argv[2]), exit(99);
 	reading_from = read(fd_read, buf, 1204);
 	if (reading_from == -1)
 		dprintf(STD_ER, "Error: Can't read from file %s\n", argv[1]), exit(98);

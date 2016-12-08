@@ -3,7 +3,7 @@
 /**
  *main - A function that copies the contents of one file to another
  *@argc: The number of arguments
- *@argv: Name of the files being passed
+ *@ar: Name of the files being passed
  *Return: 0 if the function was successful
  */
 int main(int argc, char **ar)

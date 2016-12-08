@@ -18,6 +18,8 @@ int append_text_to_file(const char *filename, char *text_content)
 		close(file_des);
 		return (-1);
 	}
+	if (text_content == NULL)
+		return (1);
 	if (text_content != NULL)
 	{
 		for (i = 0; text_content[i] != '\0'; i++)
@@ -25,7 +27,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		writing = write(file_des, text_content, i);
 		if (writing == -1)
 		{
-			close (file_des);
+			close(file_des);
 			return (-1);
 		}
 		return (1);

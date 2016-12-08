@@ -20,10 +20,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	buf = malloc(sizeof(letters));
+	buf = malloc(letters * sizeof(char));
 	if (buf == NULL)
 		return (0);
 	std_out = read(fd, buf, letters);
+	if (std_out == -1)
+		return (0);
 	close(fd);
 	printf("%s\n", buf);
 	return (std_out);

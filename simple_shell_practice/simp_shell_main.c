@@ -1,20 +1,40 @@
+#include "holberton.h"
+#include <stddef.h>
+/**
+ *
+ *
+ *
+ */
 int main(void)
 {
-	char *user_input;
+	char *user_input, **token;
 	size_t len;
-	p_list *head, current_node;
-	env_list *head_e, current_node_e;
+	int i;
+	p_list *head, *current_node;
+	env_list *head_e, *current_node_e;
 
-	head = head_e = NULL;
-	current_node = *head;
-	current_node_e = *head_e;
-	len = 1024;
-	printf("$ ");
+	head = NULL;
+	head_e = NULL;
+	current_node = head;
+	current_node_e = head_e;
+	write(STDOUT_FILENO, "$ ", 2);
 	while (getline(&user_input, &len, stdin) != -1)
 	{
-		strtok(user_input, " ");
-		printf("%s", user_input);
-		return (0);
+		token = malloc(sizeof(len));
+		if (token == NULL)
+		{
+			free(token);
+			exit (0);
+			}
+		i = 0;
+		token[i] = strtok(user_input, " ");
+		while (token[i] != NULL)
+		{
+			token[i] = strtok(NULL, " ");
+			i++;
+		}
+		execve(token[0], token, NULL);
+		write(STDOUT_FILENO, "$ ", 2);
 	}
 	return (0);
 }
@@ -24,6 +44,7 @@ int main(void)
  *
  *
  */
+/*
 env_list *_get_envLinked(env_list **head, char *str_n, char *str_v)
 {
 	env_list *current_node, *new_node;
@@ -59,3 +80,4 @@ env_list *_get_envLinked(env_list **head, char *str_n, char *str_v)
         return (new_node);
 
 }
+*/

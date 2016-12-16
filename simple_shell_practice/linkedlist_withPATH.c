@@ -4,7 +4,7 @@ extern char **environ;
  *main - prints out the output of the environment variable
  *Return: The output returns 0;
  */
-int printing_PATH(char *str)
+/*int printing_PATH(char *str)
 {
         int i;
         char *mod_str;
@@ -21,7 +21,7 @@ int printing_PATH(char *str)
 		result = result->next;
 	}
 	return (0);
-}
+	}*/
 /**
  *_getenv - A function that compares the input value to an environment variable.
  *If the environment variable exists, the result will print out
@@ -121,7 +121,7 @@ int _storeEnv(const char *name)
 	{
 		name = strtok(environ[i], "=");
 		value = _getenv(name);
-		_addnode();
+		_addnode(name, value, &head_e);
 	}
 }
 /*int _setenv(const char *name, const char *value, int overwrite)

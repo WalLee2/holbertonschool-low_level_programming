@@ -1,9 +1,9 @@
 #include "holberton.h"
 extern char **environ;
 /**
- *
- *
- *
+ *_createToken - a function that mallocs space to create tokens
+ *@user_input: Takes the input from users
+ *Return: The newly malloc'd space
  */
 char **_createToken(char *user_input)
 {
@@ -26,9 +26,9 @@ char **_createToken(char *user_input)
 	return (commands);
 }
 /**
- *
- *
- *
+ *_createChild_P - a function that creates a child process and executes
+ *the built-in function
+ *@arrayStr: A variable that takes in the tokenized string
  */
 void _createChild_P(char **arrayStr)
 {
@@ -39,16 +39,17 @@ void _createChild_P(char **arrayStr)
 	if (child_p == -1)
 	{
 		perror("Error: Child process not created");
-		_exit (0);
+		_exit(0);
 	}
 	if (child_p == 0)
 	{
-		if (execve_check = execve(arrayStr[0], arrayStr, environ) == -1)
+		execve_check = execve(arrayStr[0], arrayStr, environ);
+		if (execve_check == -1)
 		{
-			write (STDOUT_FILENO,
+			write(STDOUT_FILENO,
 			       "This command does not exist.", 28);
-			write (STDOUT_FILENO, "\n", 1);
-			_exit (0);
+			write(STDOUT_FILENO, "\n", 1);
+			_exit(0);
 		}
 	}
 	else
@@ -61,8 +62,6 @@ void _createChild_P(char **arrayStr)
  *Return: A pointer to a duplicated string or rturns NULL if
  *there was insufficient memory.
  */
-extern char **environ;
-
 char *_strdup(char *str)
 {
 	unsigned int a, i;

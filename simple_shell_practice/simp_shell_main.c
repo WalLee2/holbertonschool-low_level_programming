@@ -1,39 +1,24 @@
 #include "holberton.h"
-#include <stddef.h>
 /**
- *
+ *main - a function that prompts the user for input to run shell commands
  *
  *
  */
 int main(void)
 {
-	char *user_input, **token;
+	char *user_input, **arrayStr;
 	size_t len;
-	int i;
 	p_list *head, *current_node;
 	env_list *head_e, *current_node_e;
 
-	head = NULL;
-	head_e = NULL;
-	current_node = head;
-	current_node_e = head_e;
+	len = 0;
+	head = NULL; head_e = NULL;
+	current_node = head; current_node_e = head_e;
 	write(STDOUT_FILENO, "$ ", 2);
 	while (getline(&user_input, &len, stdin) != -1)
 	{
-		token = malloc(sizeof(len));
-		if (token == NULL)
-		{
-			free(token);
-			exit (0);
-			}
-		i = 0;
-		token[i] = strtok(user_input, " ");
-		while (token[i] != NULL)
-		{
-			token[i] = strtok(NULL, " ");
-			i++;
-		}
-		execve(token[0], token, NULL);
+		arrayStr = _createToken(user_input);
+		_createChild_P(arrayStr);
 		write(STDOUT_FILENO, "$ ", 2);
 	}
 	return (0);

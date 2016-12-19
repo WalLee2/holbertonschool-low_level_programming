@@ -56,22 +56,54 @@ char *_getenv(const char *name)
  *@str: a pointer to a string that the user input
  *Return: a linked list that stores each directory in the PATH
  */
-p_list *_getPATH(char *str, p_list *head)
+char **_getPATH(char *str, char **tok_UsInput)
 {
-	char *tok;
-	/*p_list *head*/;
+	char *tok, *tempstr, *fwd_slash, **temp_arr, *PATH_cpy;
+	int i, a, BUFSIZE, count;
 
-	/*head = NULL;*/
-	tok = strtok(str, ":");
+	i = a = 0;
+	BUFSIZE = 1024;
+	fwd_slash = "/";
+	for (count = 0; str[count] != '\0'; count++)
+		;
+	PATH_cpy = malloc(sizeof(char) * count);
+	if (PATH_cpy == NULL)
+	{
+		free(PATH_cpy);
+		exit(1);
+	}
+	_strcpy(PATH_cpy, str);
+	tok = strtok(PATH_cpy, ":");
 	/*write (STDIN_FILENO, "I'm before the while loop\n", 27);*/
+	temp_arr = malloc(sizeof(char *) * BUFSIZE);
+	if (tempstr == NULL)
+	{
+		free(temp_arr);
+		exit(1);
+	}
 	while (tok != NULL)
 	{
-		/*write (STDIN_FILENO, "I'm in the while loop\n", 23);*/
-		_getP_Linked(&head, tok);
+		tempstr = malloc(sizeof(char) * BUFSIZE);
+		if (tempstr == NULL)
+		{
+			free(tempstr);
+			exit(1);
+		}
+		_strcat(tempstr, tok);
+		/*printf("tok is %s\n", tok);*/
+		_strcat(tempstr, fwd_slash);
+		_strcat(tempstr, tok_UsInput[a]);
 		tok = strtok(NULL, ":");
+		/*write (STDIN_FILENO, "I'm in the while loop\n", 23);*/
+		temp_arr[i] = tempstr;
+		/*printf("%s\n", tempstr);*/
+		/*_memset(tempstr, 0, BUFSIZE);*/
+		i++;
 	}
+
 	/*write (STDIN_FILENO, "I'm after the while loop\n", 28);*/
-	return (head);
+	/*_getP_Linked(&head, tempstr);*/
+	return (temp_arr);
 }
 /**
  *_getP_Linked - a function that creates a linked list, for PATH environment

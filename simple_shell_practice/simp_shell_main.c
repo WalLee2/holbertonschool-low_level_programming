@@ -5,9 +5,10 @@
  */
 int main(void)
 {
-	char *user_input, **arrayStr;
+	char *user_input, **arrayStr, *env_result;
 	size_t len;
-	p_list *head, *current_node;
+	p_list *head, *current_node, *result, *_getPATH_res;
+	int i;
 	env_list *head_e, *current_node_e;
 
 	len = 0;
@@ -16,7 +17,20 @@ int main(void)
 	write(STDOUT_FILENO, "$ ", 2);
 	while (getline(&user_input, &len, stdin) != -1)
 	{
+		/*printf("I'm before the first function\n");*/
 		arrayStr = _createToken(user_input);
+		/*printf("I'm before the second function and after the first\n");*/
+		env_result = _getenv("PATH");
+		/*printf("I'm before the third function and after the second\n");*/
+		_getPATH_res = _getPATH(env_result, current_node);
+		/*while (_getPATH_res != NULL)
+		{
+			for (i = 0; _getPATH_res->c[i] != '\0'; i++)
+				;
+			write(STDOUT_FILENO, _getPATH_res->c, i);
+			write(STDOUT_FILENO, "\n", 1);
+			_getPATH_res = _getPATH_res->next;
+			}*/
 		_createChild_P(arrayStr);
 		write(STDOUT_FILENO, "$ ", 2);
 	}

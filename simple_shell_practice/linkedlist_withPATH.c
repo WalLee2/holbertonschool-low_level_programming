@@ -56,18 +56,21 @@ char *_getenv(const char *name)
  *@str: a pointer to a string that the user input
  *Return: a linked list that stores each directory in the PATH
  */
-p_list *_getPATH(char *str)
+p_list *_getPATH(char *str, p_list *head)
 {
 	char *tok;
-	p_list *head;
+	/*p_list *head*/;
 
-	head = NULL;
+	/*head = NULL;*/
 	tok = strtok(str, ":");
+	/*write (STDIN_FILENO, "I'm before the while loop\n", 27);*/
 	while (tok != NULL)
 	{
+		/*write (STDIN_FILENO, "I'm in the while loop\n", 23);*/
 		_getP_Linked(&head, tok);
 		tok = strtok(NULL, ":");
 	}
+	/*write (STDIN_FILENO, "I'm after the while loop\n", 28);*/
 	return (head);
 }
 /**
@@ -112,9 +115,11 @@ p_list *_getP_Linked(p_list **head, char *str)
  *
  *
  */
+/*
 int _storeEnv(const char *name)
 {
 	int i;
+	env_list value;
 
 	i = 0;
 	while (name != NULL)
@@ -123,7 +128,7 @@ int _storeEnv(const char *name)
 		value = _getenv(name);
 		_addnode(name, value, &head_e);
 	}
-}
+	}*/
 /*int _setenv(const char *name, const char *value, int overwrite)
 {
 	char *mod_str;

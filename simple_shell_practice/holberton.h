@@ -36,7 +36,7 @@ char *_getenv(const char *name);
 char *_strdup(char *str);
 char **_createToken(char *user_input);
 void _createChild_P(char **arrayStr);
-p_list *_getPATH(char *str);
+p_list *_getPATH(char *str, p_list *head);
 p_list *_getP_Linked(p_list **head, char *str);
 int _storeEnv(const char *name);
 env_list *_get_envLinked(env_list **head, char *str_n, char *str_v);

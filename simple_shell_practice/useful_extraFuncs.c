@@ -8,8 +8,10 @@ extern char **environ;
 char **_createToken(char *user_input)
 {
 	char **commands;
-	int i;
+	int i, a;
 
+	for (a = 0; user_input[a] != '\0'; a++)
+		;
 	commands = malloc(sizeof(char *) * 20);
 	if (commands == NULL)
 	{
@@ -17,6 +19,7 @@ char **_createToken(char *user_input)
 		exit(0);
 	}
 	i = 0;
+	/*commands[i] = malloc(sizeof(char) * a);*/
 	commands[i] = strtok(user_input, "\n ");
 	while (commands[i] != NULL)
 	{

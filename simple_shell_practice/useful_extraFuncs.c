@@ -1,5 +1,4 @@
 #include "holberton.h"
-extern char **environ;
 /**
  *_createToken - a function that mallocs space to create tokens
  *@user_input: Takes the input from users
@@ -16,7 +15,7 @@ char **_createToken(char *user_input)
 	if (commands == NULL)
 	{
 		free(commands);
-		exit(1);
+		_exit(1);
 	}
 	i = 0;
 	commands[i] = malloc(sizeof(char) * a);
@@ -24,7 +23,7 @@ char **_createToken(char *user_input)
 	{
 		free(commands[i]);
 		free(commands);
-		exit(1);
+		_exit(1);
 	}
 	commands[i] = strtok(user_input, "\n ");
 	while (commands[i] != NULL)
@@ -43,7 +42,6 @@ void _createChild_P(char **arrayStr, char **_getPATH_res)
 {
 	pid_t child_p;
 	int waiting, i;
-	p_list execve_check;
 
 	child_p = fork();
 	if (child_p == -1)
@@ -54,14 +52,14 @@ void _createChild_P(char **arrayStr, char **_getPATH_res)
 	if (child_p == 0)
 	{
 		i = 0;
-		while (arrayStr != NULL)
+		while (_getPATH_res[i] != NULL)
 		{
-			printf("%s\n", _getPATH_res[i]);
+			/*printf("%s\n", _getPATH_res[i]);*/
 			if(execve(_getPATH_res[i], arrayStr, environ) != -1)
 			{
-				/*write(STDOUT_FILENO,
-				  "This command does not exist.", 28);
-				  write(STDOUT_FILENO, "\n", 1);*/
+				write(STDOUT_FILENO,
+				      "This command does not exist.", 28);
+				write(STDOUT_FILENO, "\n", 1);
 				break;
 			}
 			i++;

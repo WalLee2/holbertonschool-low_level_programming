@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <stddef.h>
+extern char **environ;
 /**
  *struct p1_list - a struct that takes in a character and
  *points to the next node
@@ -41,6 +42,7 @@ char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_memset(char *s, char b, unsigned int n);
 p_list *_getP_Linked(p_list **head, char *str);
+void _createChild(char **arrayStr);
 int _storeEnv(const char *name);
 env_list *_get_envLinked(env_list **head, char *str_n, char *str_v);
 #endif

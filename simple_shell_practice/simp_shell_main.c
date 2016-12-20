@@ -7,34 +7,44 @@ int main(void)
 {
 	char *user_input, **arrayStr, *env_result, **_getPATH_res;
 	size_t len;
-	p_list *head, *current_node, *result;
-	int i, a;
-	env_list *head_e, *current_node_e;
+	/*p_list *head, *current_node;*/
+	int a;
+	/*env_list *head_e, *current_node_e;*/
 
 	len = a = 0;
-	head = NULL; head_e = NULL;
-	current_node = head; current_node_e = head_e;
+	/*head = NULL; head_e = NULL;*/
+	/*current_node = head; current_node_e = head_e;*/
 	write(STDOUT_FILENO, "$ ", 2);
 	while (getline(&user_input, &len, stdin) != -1)
 	{
-		/*printf("I'm before the first function\n");*/
 		arrayStr = _createToken(user_input);
-		/*printf("I'm before the second function and after the first\n");*/
-		env_result = _getenv("PATH");
-		/*printf("I'm before the third function and after the second\n");*/
-		_getPATH_res = _getPATH(env_result, arrayStr);
-		/*while (_getPATH_res[a] != NULL)
+		/*printf("I'm before the first function\n");*/
+		if (arrayStr[0][0] != '/')
 		{
-			printf("%s\n", _getPATH_res[a]);
-			for (i = 0; _getPATH_res[a][i] != '\0'; i++)
-				;
-			write(STDOUT_FILENO, _getPATH_res[a], i);
-			write(STDOUT_FILENO, "\n", 1);
-			a++;
+			/*printf("%s\n", arrayStr[outer_a]);*/
+			/*printf("I'm before the second function and after the first\n");*/
+			env_result = _getenv("PATH");
+			/*printf("I'm before the third function and after the second\n");*/
+			_getPATH_res = _getPATH(env_result, arrayStr);
+			/*while (_getPATH_res[a] != NULL)
+			{
+				printf("%s\n", _getPATH_res[a]);
+				for (i = 0; _getPATH_res[a][i] != '\0'; i++)
+					;
+				write(STDOUT_FILENO, _getPATH_res[a], i);
+				write(STDOUT_FILENO, "\n", 1);
+				a++;
 			}
 			a = 0;*/
-		_createChild_P(arrayStr, _getPATH_res);
-		write(STDOUT_FILENO, "$ ", 2);
+			_createChild_P(arrayStr, _getPATH_res);
+			write(STDOUT_FILENO, "$ ", 2);
+		}
+		else
+		{
+			/*printf("I'm after the first if statement\n");*/
+			_createChild(arrayStr);
+			write(STDOUT_FILENO, "$ ", 2);
+		}
 	}
 	return (0);
 }

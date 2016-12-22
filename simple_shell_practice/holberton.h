@@ -8,41 +8,30 @@
 #include <stddef.h>
 extern char **environ;
 /**
- *struct p1_list - a struct that takes in a character and
- *points to the next node
- *@c: A variable that is character pointer
- *@next: a variable that points to the next member
+ *struct builtins_s - a struct that points to the string in
+ *an array a struct
+ *@command: a variable that points to the string in my array of
+ *structs
+ *@ptr: a variable that is a function pointer that takes in a char **
+ *as an argument
  */
-typedef struct p1_list
+typedef struct builtins_s
 {
-	char *c;
-	struct p1_list *next;
-}p_list;
-/**
- *struct env1_list - a struct that stores environment variables
- *@name: A character pointer that stores
- *the name of the environment variable
- *@value: A character pointer that stores
- *the value of the environment variable
- *@next: A struct that points to the next node
- */
-typedef struct env1_list
-{
-	char *name;
-	char *value;
-	struct env1_list *next;
-}env_list;
-int printing_env(void);
+	char *command;
+	void (*ptr)(char **);
+} builtins_f;
 char *_getenv(const char *name);
 char *_strdup(char *str);
 char **_createToken(char *user_input);
+char *_strstr(char *haystack, char *needle);
+int checking_built(char **arr);
+void ex_it(char **arr);
+int checking_built(char **arr);
 void _createChild_P(char **arrayStr, char **_getPATH_res);
 char **_getPATH(char *str, char **tok_UsInput);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
+void environment(char **arr);
 char *_memset(char *s, char b, unsigned int n);
-p_list *_getP_Linked(p_list **head, char *str);
 void _createChild(char **arrayStr);
-int _storeEnv(const char *name);
-env_list *_get_envLinked(env_list **head, char *str_n, char *str_v);
 #endif

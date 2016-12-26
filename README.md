@@ -5,9 +5,9 @@
 ####In the table below, you will find the project name and a short description about the topic.
 
 ##**Major Projects:**
-0x10-[printf](https://github.com/WalLee2/printf)
+Recreating: [printf](https://github.com/WalLee2/printf)
 
-0x15-[simple_shell](https://github.com/WalLee2/simple_shell)
+Recreating: [shell](https://github.com/WalLee2/simple_shell)
 
 |                  Project Name               |                     Description                     |
 | :-----------------------------------------: |  :-----------------------------------------------:  |

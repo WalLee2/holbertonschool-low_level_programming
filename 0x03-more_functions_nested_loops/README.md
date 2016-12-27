@@ -14,6 +14,8 @@
 |        9-fizz_buzz.c                |   A function prints the numbers 1 to 100. Multiples of 3 prints Fizz, multiples of 5 prints Buzz, and multiples of both 3 and 5 print Fizz Buzz.  |
 |        10-print_triangle.c          |   A function that prints a triangle, followed by a new line.  |
 
+##Examples:
+
 ####2-mul.c
 ```
 waltonlee$ gcc -Wall -pedantic -Werror -Wextra 2-main.c 2-mul.c -o 2-mul

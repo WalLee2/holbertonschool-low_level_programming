@@ -8,41 +8,41 @@
  */
 dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 {
-	dlistint_t *head_ref_bef, *head_ref_aft, *new_n;
+	dlistint_t *head_b, *head_aft, *new;
 	unsigned int i;
 
-	if (*head == NULL && idx > 0)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 		return (NULL);
-	new_n = malloc(sizeof(dlistint_t));
-	if (new_n == NULL)
-		return (NULL);
-	new_n->n = n;
-	head_ref_bef = head_ref_aft = *head;
+	if (*head == NULL)
+	{
+		if (idx > 0)
+			free(new); return (NULL);
+		new->next = NULL; *head = new; return (new);
+	}
+	new->n = n;
+	head_b = head_aft = *head;
 	if (idx == 0)
 	{
-		new_n->prev = NULL;
-		head_ref_bef->prev = new_n; new_n->next = *head; *head = new_n;
-		return (new_n);
+		new->prev = NULL;
+		head_b->prev = new; new->next = *head; *head = new;
+		return (new);
 	}
 	else if (idx != 0)
 	{
-		for (i = 0; i <= idx && head_ref_aft != NULL; i++)
+		for (i = 0; i <= idx && head_aft != NULL; i++)
 		{
-			head_ref_bef = head_ref_aft->next;
+			head_b = head_aft->next;
 			if (i == idx - 1)
 			{
-				head_ref_aft->next = new_n;
-				new_n->prev = head_ref_aft;
-				if (head_ref_bef == NULL)
-					new_n->next = NULL;
+				head_aft->next = new; new->prev = head_aft;
+				if (head_b == NULL)
+					new->next = NULL;
 				else
-				{
-					new_n->next = head_ref_bef;
-					head_ref_bef->prev = new_n;
-				}
-				return (new_n);
+					new->next = head_b; head_b->prev = new;
+				return (new);
 			}
-			head_ref_aft = head_ref_aft->next;
+			head_aft = head_aft->next;
 		}
 	}
 	return (NULL);

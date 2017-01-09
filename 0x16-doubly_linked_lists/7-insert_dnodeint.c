@@ -11,13 +11,11 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	dlistint_t *head_ref_bef, *head_ref_aft, *new_n;
 	unsigned int i;
 
+	if (*head == NULL && idx > 0)
+		return (NULL);
 	new_n = malloc(sizeof(dlistint_t));
 	if (new_n == NULL)
 		return (NULL);
-	if (*head == NULL)
-	{
-		free(new_n); return (NULL);
-	}
 	new_n->n = n;
 	new_n->next = NULL;
 	head_ref_bef = head_ref_aft = *head;

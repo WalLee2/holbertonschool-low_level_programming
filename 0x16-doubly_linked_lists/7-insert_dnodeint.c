@@ -17,16 +17,16 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	if (*head == NULL)
 	{
 		if (idx > 0)
+		{
 			free(new); return (NULL);
-		new->next = NULL; *head = new;
-		return (new);
+		}
+		new->next = NULL; *head = new; return (new);
 	}
 	new->n = n; head_b = head_aft = *head;
 	if (idx == 0)
 	{
-		new->prev = NULL;
-		head_b->prev = new; new->next = *head; *head = new;
-		return (new);
+		new->prev = NULL; head_b->prev = new; new->next = *head;
+		*head = new; return (new);
 	}
 	else if (idx != 0)
 	{

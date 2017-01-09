@@ -20,11 +20,9 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **h, unsigned int idx, int n)
 		{
 			free(new); return (NULL);
 		}
-		*h = new; new->next = NULL; new->prev = NULL;
-		return (new);
+		*h = new; new->next = NULL; new->prev = NULL; return (new);
 	}
-	new->prev = NULL;
-	head_b = head_aft = *h;
+	new->prev = NULL; head_b = head_aft = *h;
 	if (idx == 0)
 	{
 		head_b->prev = new; new->next = *h; *h = new;

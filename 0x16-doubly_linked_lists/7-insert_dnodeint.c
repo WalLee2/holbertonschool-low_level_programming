@@ -25,30 +25,24 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	}
 	else if (idx != 0)
 	{
-		for (i = 0; i < (idx - 1); i++)
+		for (i = 0; i <= idx && head_ref_aft != NULL; i++)
 		{
-			head_ref_bef = head_ref_bef->next;
-			if (head_ref_bef == NULL)
+			head_ref_bef = head_ref_aft->next;
+			if (i == idx - 1)
 			{
-				free(new_n);
-				return (NULL);
+				head_ref_aft->next = new_n;
+				new_n->prev = head_ref_aft;
+				if (head_ref_bef == NULL)
+					new_n->next = NULL;
+				else
+				{
+					new_n->next = head_ref_bef;
+					head_ref_bef->prev = new_n;
+				}
+				return (new_n);
 			}
-		}
-		for (i = 0; i < idx; i++)
-		{
 			head_ref_aft = head_ref_aft->next;
-			if (head_ref_aft == NULL)
-			{
-				head_ref_bef->next = new_n;
-				new_n->prev = head_ref_bef;
-				break;
-			}
-			head_ref_bef->next = new_n;
-			new_n->prev = head_ref_bef;
 		}
-
 	}
-	new_n->next = head_ref_aft;
-	head_ref_aft->prev = new_n;
-	return (new_n);
+	return (NULL);
 }

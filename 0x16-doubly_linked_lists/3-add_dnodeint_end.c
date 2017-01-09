@@ -3,7 +3,7 @@
  *add_dnodeint_end - Function that adds to the end of a doubly linked list
  *@head: A double pointer that points to NULL
  *@n: A number to be stored in the linked list
- *return: The new linked list
+ *Return: The new linked list
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {

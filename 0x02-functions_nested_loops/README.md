@@ -2,7 +2,7 @@
 
 
 
-|                  Project Name               |                     Description                     |
+|                  File Name                  |                     Description                     |
 | :-----------------------------------------: |  :-----------------------------------------------:  |
 |        0-holberton.c                        |  A program that strictly prints `Holberton` followed by a newline using only `_putchar`.  |
 |        1-alphabet.c                         |  A function that prints the alphabet, in lowercase, followed by a newline.  |

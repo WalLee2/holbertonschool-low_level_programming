@@ -1,5 +1,7 @@
 #0x09-argc_argv
+
 Passing in arguments from the command line. Main is now taking in parameters.
+
 |                  File                       |                     Description                     |
 | :-----------------------------------------: |  :-----------------------------------------------:  |
 |        0-whatsmyname.c                      |  Function that prints the name of the file to standard out.  |

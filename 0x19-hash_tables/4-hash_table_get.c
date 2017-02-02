@@ -13,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	idx = hash_val % ht->size;
 	if (ht->array[idx] != NULL)
 	{
-		if (ht->array[idx]->key == key)
+		if (strcmp(ht->array[idx]->key, key) == 0)
 			return (ht->array[idx]->value);
 	}
 	else if (ht->array[idx] == NULL)

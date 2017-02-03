@@ -1,8 +1,9 @@
 #include "hash_tables.h"
 /**
- *hash_table_create - Creating a hash table that contain the key value pairs
- *@size: the size of the space being mallocd which is a long unsigned int.
- *Return: The newly created hash table.
+ *hash_table_create - Creating a hash table that contains a space
+ *for one key value pair
+ *@size: the size of the space being mallocd which is of type long unsigned int.
+ *Return: Pointer to the newly created hash table.
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {

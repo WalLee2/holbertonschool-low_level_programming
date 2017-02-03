@@ -12,7 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_val = hash_djb2((unsigned char *)key);
 	idx = hash_val % ht->size;
 	if (ht == NULL)
-		return (NULL)
+		return (NULL);
 	if (ht->array[idx] != NULL)
 	{
 		if (strcmp(ht->array[idx]->key, key) == 0)

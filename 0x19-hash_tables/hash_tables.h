@@ -4,10 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * @key : The key, string
- * The key is unique in the HashTable
- * @value : The value corresponding to a key
- * @next : A pointer to the next node of the list
+ *struct hash_node_s - Node of a hash table
+ *@key: The key, string
+ *The key is unique in the HashTable
+ *@value: The value corresponding to a key
+ *@next: A pointer to the next node of the list
  */
 typedef struct hash_node_s
 {
@@ -17,10 +18,11 @@ typedef struct hash_node_s
 } hash_node_t;
 
 /**
- * @size: The size of the array
- * @array: An array of size @size
- * Each cell of this array is a pointer to the first node of a linked list,
- * because we want our HashTable to use a Chaining collision handling
+ *struct hash_table_s - Hash table data structure
+ *@size: The size of the array
+ *@array: An array of size
+ *Each cell of this array is a pointer to the first node of a linked list,
+ *because we want our HashTable to use a Chaining collision handling
  */
 typedef struct hash_table_s
 {

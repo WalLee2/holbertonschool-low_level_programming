@@ -9,13 +9,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idx, hash_val;
 
-	hash_val = hash_djb2((unsigned char *)key);
-	idx = hash_val % ht->size;
 	if (ht == NULL)
 		return (NULL);
+	hash_val = hash_djb2((unsigned char *)key);
+	idx = hash_val % ht->size;
 	if (ht->array[idx] != NULL)
 	{
 		if (strcmp(ht->array[idx]->key, key) == 0)
 			return (ht->array[idx]->value);
 	}
+	return (NULL);
 }

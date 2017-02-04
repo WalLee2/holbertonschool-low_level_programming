@@ -9,10 +9,6 @@ Introduction on how to create a dynamic library.
 
 ##Example:
 
-####libholberton.so
-```
-
-```
 ####7-print_last_digit.c
 ```
 -rwxrwxr-x 1 walton walton Jan 14 20:28 libholberton.so
@@ -79,6 +75,3 @@ waltonlee$ ldd len
 waltonlee$ ./len
 9
 ```
-waltonlee$ 
-waltonlee$ 
-waltonlee$ 

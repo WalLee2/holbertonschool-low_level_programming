@@ -10,6 +10,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new;
 	unsigned long int idx, hash_val, val_chk;
+	const char *dupkey, *dupval;
 
 	if (ht == NULL)
 		return (0);
@@ -18,10 +19,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	hash_val = hash_djb2((unsigned char *)key);
 	idx = hash_val % ht->size;
+	dupkey = strdup(key);
+	dupval = strdup(value);
 	if (ht->array[idx] == NULL)
 	{
-		new->key = (char *)key;
-		new->value = (char *)value;
+		new->key = (char *)dupkey;
+		new->value = (char *)dupval;
 		new->next = NULL;
 		ht->array[idx] = new;
 	}

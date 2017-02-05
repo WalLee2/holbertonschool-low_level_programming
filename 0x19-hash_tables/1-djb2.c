@@ -4,6 +4,7 @@
  *the length of the string.
  *@str: The string will be evaluated.
  *Return: The new hash value.
+ *Credit: Dan Bernstien
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {

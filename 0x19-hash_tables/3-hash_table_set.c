@@ -10,21 +10,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new;
 	unsigned long int idx, hash_val, val_chk;
-	const char *dupkey, *dupval;
 
 	if (ht == NULL)
 		return (0);
-	new = malloc(sizeof(hash_node_t));
-	if (new == NULL)
-		return (0);
 	hash_val = hash_djb2((unsigned char *)key);
 	idx = hash_val % ht->size;
-	dupkey = strdup(key);
-	dupval = strdup(value);
 	if (ht->array[idx] == NULL)
 	{
-		new->key = (char *)dupkey;
-		new->value = (char *)dupval;
+		new = malloc(sizeof(hash_node_t));
+		if (new == NULL)
+			return (0);
+		new->key = strdup(key);
+		new->value = strdup(value);
 		new->next = NULL;
 		ht->array[idx] = new;
 	}
@@ -54,7 +51,10 @@ int collision_chk(hash_table_t *ht, unsigned long int idx, char *k, char *val)
 	{
 		if (strcmp(friend->key, k) == 0)
 		{
-			ht->array[idx]->value = val;
+			free(friend->value);
+			friend->value = strdup(val);
+			if (friend->value == NULL)
+				return (0);
 			return (1);
 		}
 		friend = friend->next;
@@ -62,9 +62,13 @@ int collision_chk(hash_table_t *ht, unsigned long int idx, char *k, char *val)
 	new_n = malloc(sizeof(hash_node_t));
 	if (new_n == NULL)
 		return (0);
-	new_n->key = k;
-	new_n->value = val;
 	new_n->next = ht->array[idx];
 	ht->array[idx] = new_n;
+	new_n->key = strdup(k);
+	if (new_n->key == NULL)
+		return (0);
+	new_n->value = strdup(val);
+	if (new_n->value == NULL)
+		return (0);
 	return (1);
 }

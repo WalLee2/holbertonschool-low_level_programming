@@ -7,31 +7,31 @@
  */
 listint_t *swap(listint_t **list, listint_t *node)
 {
-        listint_t *next, *aft_next;
+	listint_t *next, *aft_next;
 
-        next = node->next;
-        aft_next = node->next;
-        while (node != NULL && node->n > next->n)
-        {
+	next = node->next;
+	aft_next = node->next;
+	while (node != NULL && node->n > next->n)
+	{
 		aft_next = node->next;
-                node->next = next->next;
+		node->next = next->next;
 		if (node->next != NULL)
 			node->next->prev = node;
-                next->prev = node->prev;
+		next->prev = node->prev;
 		if (next->prev != NULL)
 			next->prev->next = next;
-                next->next = node;
-                node->prev = next;
+		next->next = node;
+		node->prev = next;
 		node = next->prev;
 		while ((*list)->prev != NULL)
-                        *list = (*list)->prev;
+			*list = (*list)->prev;
 		print_list(*list);
 	}
 	return (aft_next);
 }
 /**
  *insertion_sort_list - C implementation of insertion sort
- *@list - double pointer to a doubly linked list of size 1
+ *@list: double pointer to a doubly linked list of size 1
  */
 void insertion_sort_list(listint_t **list)
 {

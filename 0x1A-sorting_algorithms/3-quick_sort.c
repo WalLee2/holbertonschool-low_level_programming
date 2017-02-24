@@ -63,7 +63,7 @@ void quick_sort(int *array, size_t size)
 {
 	long start, end;
 
-	if (*array == NULL || size == 0)
+	if (array == NULL || size == 0)
 		return;
 	start = 0;
 	end = size - 1;

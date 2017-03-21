@@ -1,14 +1,16 @@
 #include "binary_trees.h"
 /**
- *
- *
- *
+ *binary_tree_is_full - Checks if a binary tree is full
+ *@tree: The tree to be evaluated
+ *Return: 0 if it's not a leaf 1 if leaf node is hit
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	int right, left;
 
 	right = left = 0;
+	if (tree == NULL)
+		return (NULL)
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
 	if (tree->left == NULL && tree->right != NULL)

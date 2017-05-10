@@ -1,4 +1,4 @@
-#0x02-functions_nested_loops
+# 0x02-functions_nested_loops
 
 
 
@@ -20,23 +20,23 @@
 |        103-fibonacci.c              |  A function that finds and prints the sum of the even-values whose values do not exceed 4,000,000.   |
 |        104-fibonacci.c              |  A function that finds the first 98 Fibonacci numbers, starting with 1 and 2, followed by a new line. |
 
-##Example:
+## Example:
 
-####4-isalpha.c
+#### 4-isalpha.c
 ```
 waltonlee$ gcc -Wall -pedantic -Werror -Wextra _putchar.c 4-main.c 4-isalpha.c -o 4-isalpha
 waltonlee$ ./4-isalpha
 1110
 waltonlee$ 
 ```
-####7-print_last_digit.c
+#### 7-print_last_digit.c
 ```
 waltonlee$ gcc -Wall -pedantic -Werror -Wextra _putchar.c 7-main.c 7-print_last_digit.c -o 7-last_digit
 waltonlee$ ./7-last_digit
 8044
 waltonlee$ 
 ```
-####104-fibonacci.c
+#### 104-fibonacci.c
 ```
 waltonlee$ gcc -Wall -pedantic -Werror -Wextra _putchar.c 104-fibonacci.c -o 104
 waltonlee$ ./104

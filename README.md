@@ -1,11 +1,11 @@
 ![Holberton School Logo](https://www.holbertonschool.com/holberton-logo.png)
 # Low Level Programming
 
-####This repository consists of all the C programming projects done at [Holberton School](https://www.holbertonschool.com/) by [Walton Lee](https://www.linkedin.com/in/walton-lee-443560a6)
-####All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
-####In the table below, you will find the project name and a short description about the topic.
+#### This repository consists of all the C programming projects done at [Holberton School](https://www.holbertonschool.com/) by [Walton Lee](https://www.linkedin.com/in/walton-lee-443560a6)
+#### All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
+#### In the table below, you will find the project name and a short description about the topic.
 
-##**Major Projects:**
+## **Major Projects:**
 Recreating: [printf](https://github.com/WalLee2/printf)
 
 Recreating: [shell](https://github.com/WalLee2/simple_shell)

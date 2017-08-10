@@ -1,4 +1,4 @@
-#0x00-hello_world
+# 0x00-hello_world
 
 |                  File                       |                     Description                     |
 | :-----------------------------------------: |  :-----------------------------------------------:  |
@@ -12,16 +12,16 @@
 |        100-intel          |   A bash script that generates the assembly code, in Intel syntax, of a C code.  |
 |        101-quote.c        |   C program that prints out `and that piece of art is useful - Dora Korpar, 2015-10-19` to standard error.  |
 
-##Example:
+## Example:
 
-####5-printf.c
+#### 5-printf.c
 ```
 waltonlee$ gcc -Wall 5-printf.c
 waltonlee$ ./a.out
 with proper grammar, but the outcome is a piece of art,
 waltonlee$ 
 ```
-####6-size.c
+#### 6-size.c
 ```
 waltonlee$ gcc 6-size.c -m32 -o size32 2> /tmp/32
 waltonlee$ gcc 6-size.c -m64 -o size64 2> /tmp/64
@@ -39,7 +39,7 @@ Size of a long long int: 8 byte(s)
 Size of a float: 4 byte(s)
 waltonlee$ 
 ```
-####101-quote.c
+#### 101-quote.c
 ```
 waltonlee$ gcc -Wall -o quote 101-quote.c
 waltonlee$ ./quote

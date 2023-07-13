@@ -1,30 +1,22 @@
-#include "holberton.h"
+#include "main.h"
+#define ASCII_NUMBER 48
 
 /**
- *print_last_digit - prints the last of a number
+ * print_last_digit - print the last digit of a number as a character
  *
- *@r: stores the last digit and goes through the condtional statements
+ *@n: input integer to be evaluated
  *
- *main - evaluates last digit
- *
- *Return: the value of the last digit
+ *Return: last digit of the number
  */
 
-int print_last_digit(int r)
-
+int print_last_digit(int n)
 {
-	int remainder = r % 10;
+	int last = (n % 10);
 
-	if (r < 0)
+	if (last < -1)
 	{
-		r = r * -1;
-
-		_putchar(r % 10 + '0');
-		return (r % 10);
+		last *= -1;
 	}
-	else
-	{
-		_putchar(remainder + '0');
-		return (r % 10);
-	}
+	_putchar(last + ASCII_NUMBER);
+	return (last);
 }

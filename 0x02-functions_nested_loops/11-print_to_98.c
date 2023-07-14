@@ -1,29 +1,26 @@
+#include "main.h"
 #include <stdio.h>
-#include "holberton.h"
+
 /**
- *print_to_98 - printing numbers up to or down until 98
+ * print_to_98 - given an integer input, print all numbers until 98
  *
- *@n: This variable is used to compare certain conditions.
+ *@n: integer input
  *
- *Return: value will return void
  */
+
 void print_to_98(int n)
 {
-	if (n < 98)
+	while (n != 98)
 	{
-		while (n < 98)
+		printf("%i, ", n);
+		if (n > 98)
 		{
-			printf("%d, ", n);
+			n--;
+		}
+		else
+		{
 			n++;
 		}
 	}
-	else if (n > 98)
-	{
-		while (n > 98)
-		{
-			printf("%d, ", n);
-			n--;
-		}
-	}
-	printf("98\n");
+	printf("%i\n", n);
 }

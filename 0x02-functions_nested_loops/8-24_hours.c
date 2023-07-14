@@ -1,36 +1,41 @@
-#include "holberton.h"
+#include "main.h"
 /**
- *jack_bauer - outputting the time from 00:00 to 23:59
- *Description: printing out all minutes of the time till 23:59
- *Return: no value is returned
+ * print_number - print the characters of a number to stdout
  *
+ * @n: integer value to be converted into a character and printed
  */
 
+void print_number(int n)
+{
+	if (n < 10)
+	{
+		_putchar('0');
+	}
+	else
+	{
+		_putchar((n / 10) + '0');
+	}
+	_putchar((n % 10) + '0');
+}
+/**
+ * jack_bauer - print the hour and minutes within a 24 hour period
+ *
+ */
 void jack_bauer(void)
 {
-	int i = 0, j = 0, k, l, f, s;
+	int h = 0, m = 0;
 
-	while (i <= 23)
+	while (h < 24)
 	{
-		while (j <= 59)
+		m = 0;
+		while (m <= 59)
 		{
-			s = j % 10;
-			f = j / 10;
-			l = i % 10;
-			k = i / 10;
-			_putchar(k + '0');
-			_putchar(l + '0');
+			print_number(h);
 			_putchar(':');
-			_putchar(f + '0');
-			_putchar(s + '0');
+			print_number(m);
 			_putchar('\n');
-			if (j == 59)
-			{
-				j = 0;
-				break;
-			}
-			j++;
+			m++;
 		}
-		i++;
+		h++;
 	}
 }

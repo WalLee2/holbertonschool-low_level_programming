@@ -1,22 +1,24 @@
+#include "main.h"
 #include <stdio.h>
+
 /**
- *main - printing out the sum of all multiples of 3 or 5 below 1024.
- *Return: The value will return 0.
+ * main - Add up all the multiples of 3 and 5 between 0 and input n
+ *
+ * Return: Always returns 0
  */
 
 int main(void)
 {
-	int i, n;
+	int total = 0, i = 0;
 
-	i = 0;
 	while (i < 1024)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
+		if ((i % 3 == 0) || (i % 5 == 0))
 		{
-			n = n + i;
+			total += i;
 		}
 		i++;
 	}
-	printf("%d\n", n);
+	printf("%i\n", total);
 	return (0);
 }

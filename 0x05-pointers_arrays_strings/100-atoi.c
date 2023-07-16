@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _atoi - Convert string to int
  *
@@ -26,7 +27,7 @@ int _atoi(char *s)
 			{
 				n *= 10;
 			}
-			else if (s[next] == 32 && s[next + 1])
+			else if (s[next] != '\0')
 			{
 				negative = 0;
 				break;

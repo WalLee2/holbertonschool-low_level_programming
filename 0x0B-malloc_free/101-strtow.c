@@ -141,6 +141,10 @@ char **strtow(char *str)
 	}
 
 	wc = word_count(str);
+	if (wc == 0)
+	{
+		return (NULL);
+	}
 
 	w_list = malloc((wc + 1) * sizeof(char *));
 	if (w_list == NULL)
@@ -148,7 +152,7 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	for (i = 0; i < wc; i++)
+	for (i = 0; i <= wc; i++)
 	{
 		w_list[i] = NULL;
 	}
@@ -164,6 +168,7 @@ char **strtow(char *str)
 			}
 		}
 		free(w_list);
+		return (NULL);
 	}
 
 	return (w_list);

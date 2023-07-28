@@ -59,7 +59,7 @@ int _strcpy(char *s, char **w_list, int len, int wc)
 	char *tmp = NULL;
 	int i;
 
-	tmp = malloc((len) * sizeof(char));
+	tmp = malloc((len + 1) * sizeof(char));
 	if (tmp == NULL)
 	{
 		printf("Malloc failed!\n");
@@ -142,7 +142,7 @@ char **strtow(char *str)
 
 	wc = word_count(str);
 
-	w_list = malloc((wc + 1) * sizeof(int *));
+	w_list = malloc((wc + 1) * sizeof(char *));
 	if (w_list == NULL)
 	{
 		return (NULL);

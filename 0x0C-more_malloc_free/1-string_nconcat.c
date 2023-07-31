@@ -38,12 +38,10 @@ void _strcpy(char *src, char *dest, int offset, int end)
 	{
 		dest[i + offset] = src[i];
 	}
-
-	if (offset != 0)
+	if (offset)
 	{
 		dest[i + offset] = '\0';
 	}
-
 }
 
 /**
@@ -71,15 +69,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	len2 = _strlen(s2) + 1;
+	len2 = _strlen(s2);
 	if (n < len2)
 	{
-		len2 = n + 1;
+		len2 = n;
 	}
 
 	len1 = _strlen(s1);
 
-	new_s = malloc((len1 + len2) * sizeof(char));
+	new_s = malloc((len1 + len2 + 1) * sizeof(char));
 	if (new_s == NULL)
 	{
 		return (NULL);
@@ -87,6 +85,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	_strcpy(s1, new_s, 0, len1);
 	_strcpy(s2, new_s, len1, len2);
-
 	return (new_s);
 }

@@ -20,31 +20,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy - Copy a string src to a malloc'ed space dest
- *
- * @src: String to copy
- *
- * @dest: Destination to be copied
- *
- * @offset: end of index of last copied string
- *
- * @end: Stopping index of src string to copy
- */
-void _strcpy(char *src, char *dest, int offset, int end)
-{
-	int i;
-
-	for (i = 0; i < end; i++)
-	{
-		dest[i + offset] = src[i];
-	}
-	if (offset)
-	{
-		dest[i + offset] = '\0';
-	}
-}
-
-/**
  * string_nconcat - Copy over s1 and the first n bytes of s2 to a new space
  *
  * @s1: Input string 1 to copy over
@@ -58,7 +33,7 @@ void _strcpy(char *src, char *dest, int offset, int end)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_s;
-	unsigned int len1 = 0, len2 = 0;
+	unsigned int len1 = 0, len2 = 0, i = 0, j = 0, total = 0;
 
 	if (s1 == NULL)
 	{
@@ -77,13 +52,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len1 = _strlen(s1);
 
-	new_s = malloc((len1 + len2 + 1) * sizeof(char));
+	total = len1 + len2;
+	new_s = malloc((total + 1) * sizeof(char));
 	if (new_s == NULL)
 	{
 		return (NULL);
 	}
 
-	_strcpy(s1, new_s, 0, len1);
-	_strcpy(s2, new_s, len1, len2);
+	for (i = 0; i < total && s1[i] != '\0'; i++)
+	{
+		new_s[i] = s1[i];
+	}
+
+	for (j = 0; i < total && s2[j] != '\0'; i++, j++)
+	{
+		new_s[i] = s2[j];
+	}
+	new_s[i] = '\0';
 	return (new_s);
 }

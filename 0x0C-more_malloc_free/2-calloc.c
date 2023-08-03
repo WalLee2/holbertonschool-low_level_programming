@@ -13,23 +13,25 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i, *new, total = 0;
+	unsigned int i;
+	void *new;
+	char *tmp;
 
-	if (!nmemb || !size)
+	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	total = nmemb * size;
-	new = malloc(total);
+	new = malloc(nmemb * size);
 	if (new == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < total; i++)
+	tmp = new;
+	for (i = 0; i < nmemb; i++)
 	{
-		new[i] = 0;
+		tmp[i] = 0;
 	}
 
 	return (new);

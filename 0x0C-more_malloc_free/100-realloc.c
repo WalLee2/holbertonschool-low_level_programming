@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+
+/**
+ * _copy - copy contents of old array into new array
+ * @o_ptr: pointer pointing at old array
+ * @old_size: Size of the old array
+ * @n_ptr: pointer pointing at new array
+ */
 
 void _copy(char *o_ptr, int old_size, char *n_ptr)
 {
@@ -12,6 +18,11 @@ void _copy(char *o_ptr, int old_size, char *n_ptr)
 	}
 }
 
+/**
+ * new_space - wrapper around malloc to condense the calling function
+ * @size: Amount to allocate using malloc
+ * Return: Pointer to newly memory allocated space
+ */
 void *new_space(int size)
 {
 	void *new;
@@ -25,6 +36,13 @@ void *new_space(int size)
 
 }
 
+/**
+ * _realloc - Resize an array passed by user if it exists
+ * @ptr: Pointer to old array
+ * @old_size: Size of the old array
+ * @new_size: Size of the new array
+ * Return: Void pointer to the newly allocated space or the old pointer
+ */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new = NULL;
@@ -37,7 +55,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else if (new_size == old_size)
 	{
-		printf("Returning pointer!\n");
 		return (ptr);
 	}
 	else if (!ptr)

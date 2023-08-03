@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stddef.h>
 
 /**
  * _calloc - Allocate nmemb units of size and return pointer to the new space
